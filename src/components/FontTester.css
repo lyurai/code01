@@ -1,0 +1,8 @@
+.RangeWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.RangeWrapper input[type="range"] {
+    flex-grow: 1;
+}

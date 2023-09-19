@@ -1,0 +1,54 @@
+/* Menu.css */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  gap: 15px;
+  max-width: 1440px;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+}
+
+.menu-button {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 70px;
+  font-weight: normal;
+  border-radius: 100px;
+  padding: 15px 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  transition: flex 0.2s ease, transform 0.2s ease, max-width 0.2s ease;
+  will-change: flex, transform, max-width;
+  flex: 1;
+  max-width: 100%;
+}
+
+.menu-button:not(:first-child) {
+  margin-left: 15px;
+}
+
+.menu-button.active {
+  transform: scaleX(1);
+}
+
+.menu-button:not(:active) {
+  transform: scaleX(auto);
+}
+
+.menu-container:hover .menu {
+  justify-content: space-between;
+}
+
+.menu-container:hover .menu-button:not(:hover) {
+  flex: 0.3;
+  max-width: 30%;
+}
+
+.menu-container:hover .menu-button:hover {
+  flex: 1;
+  max-width: 100%;
+}
