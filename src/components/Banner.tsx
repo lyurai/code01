@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Banner.css';
-import backgroundImage from '../002.png'; // Изменен импорт на 002.png
+// import backgroundImage from '../002.png'; // Изменен импорт на 002.png
 
 const Banner: React.FC = () => {
     const [fontSize, setFontSize] = useState(40);
@@ -40,7 +40,7 @@ const Banner: React.FC = () => {
     return (
         <div className="banner-container">
             <div className="banner-background">
-                <img src={backgroundImage} alt="Background Image" className="banner-image" /> {/* Изменен src на backgroundImage */}
+                {/* <img src={backgroundImage} alt="Background Image" className="banner-image" /> */}
             </div>
             <div className="banner-content" ref={bannerRef}>
                 <h2 className="banner-text" style={{ fontSize: `${fontSize}px` }}>

@@ -15,25 +15,27 @@ const FontTester: React.FC = () => {
 
     const contentRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const savedRange = localStorage.getItem('selection');
-        if (savedRange && contentRef.current) {
-            const range = JSON.parse(savedRange);
-            const sel = window.getSelection();
-            if (sel) {
-                sel.removeAllRanges();
-                sel.addRange(range);
-            }
-        }
-    }, [fontSize, userText]);
+    // FIXME: Errors with range here
+    // useEffect(() => {
+    //     const savedRange = localStorage.getItem('selection');
+    //     if (savedRange && contentRef.current) {
+    //         const range = JSON.parse(savedRange) ?? new Range();
+    //         const sel = window.getSelection();
+    //         if (sel && sel.rangeCount) {
+    //             sel.removeAllRanges();
+    //             sel.addRange(range);
+    //         }
+    //     }
+    // }, [fontSize, userText]);
 
-    useEffect(() => {
-        saveSelection();
-    }, [fontSize]);
+    // FIXME: Errors with range here
+    // useEffect(() => {
+    //     saveSelection();
+    // }, [fontSize]);
 
     const saveSelection = () => {
         const sel = window.getSelection();
-        if (sel && contentRef.current) {
+        if (sel && sel.rangeCount && contentRef.current) {
             const range = sel.getRangeAt(0).cloneRange();
             range.setStart(contentRef.current, contentRef.current.childNodes.length);
             localStorage.setItem('selection', JSON.stringify(range));
