@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Menu.css';
 
 interface MenuItem {
@@ -36,8 +35,8 @@ const Menu: React.FC = () => {
         <div className="menu-container" onMouseLeave={handleMenuLeave}>
             <div className="menu">
                 {menuItems.map((menuItem, index) => (
-                    <Link
-                        to={menuItem.label.toLowerCase()} // Приведем к нижнему регистру и используем как часть URL
+                    <a
+                        href={menuItem.label.toLowerCase()} // Приведем к нижнему регистру и используем как часть URL
                         key={index}
                         className={`menu-button ${activeMenuItem === menuItem ? 'active' : ''}`}
                         style={{
@@ -49,7 +48,7 @@ const Menu: React.FC = () => {
                         onMouseLeave={() => setActiveMenuItem(null)}
                     >
                         {menuItem.label}
-                    </Link>
+                    </a>
                 ))}
             </div>
         </div>
