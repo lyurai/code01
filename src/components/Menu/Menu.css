@@ -1,0 +1,38 @@
+/* Menu.css */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  gap: 15px;
+  max-width: 1440px;
+}
+
+.menu {
+  display: flex;
+  width: 100%;
+}
+
+.menu-button {
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  font-size: 3rem;
+  font-weight: 800;
+  border-radius: 100px;
+  padding: 5px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  max-width: 100%;
+  text-decoration: none;
+  transition: all ease-in-out 50ms;
+  margin: 0 5px;
+  text-align: center;
+  min-width: 25%;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.menu-button:hover {
+  width: 50%;
+}

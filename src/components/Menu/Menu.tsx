@@ -17,39 +17,19 @@ const Menu: React.FC = () => {
         { label: 'About', bgColor: '#9268E3', textColor: '#FFFFFF' },
     ];
 
-    const [activeMenuItem, setActiveMenuItem] = useState<MenuItem | null>(null);
-
-    const handleMenuItemHover = (menuItem: MenuItem) => {
-        setActiveMenuItem(menuItem);
-    };
-
-    const handleMenuLeave = () => {
-        setActiveMenuItem(null);
-    };
-
-    const getMenuItemWidth = (menuItem: MenuItem) => {
-        if (activeMenuItem === null || activeMenuItem === menuItem) {
-            return 'auto';
-        } else {
-            return 'flex';
-        }
-    };
 
     return (
-        <div className="menu-container" onMouseLeave={handleMenuLeave}>
+        <div className="menu-container">
             <div className="menu">
                 {menuItems.map((menuItem, index) => (
                     <a
                         href={menuItem.label.toLowerCase().replace(' ', '-')}
                         key={index}
-                        className={`menu-button ${activeMenuItem === menuItem ? 'active' : ''}`}
+                        className="menu-button"
                         style={{
                             backgroundColor: menuItem.bgColor,
                             color: menuItem.textColor,
-                            width: getMenuItemWidth(menuItem),
                         }}
-                        onMouseEnter={() => handleMenuItemHover(menuItem)}
-                        onMouseLeave={() => setActiveMenuItem(null)}
                     >
                         {menuItem.label}
                     </a>
