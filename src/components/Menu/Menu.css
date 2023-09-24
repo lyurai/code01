@@ -13,27 +13,23 @@
 }
 
 .menu-button {
-  text-transform: uppercase;
-  font-variant: small-caps;
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 100;
   border-radius: 100px;
-  padding: 5px 0px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: clip;
   max-width: 100%;
   text-decoration: none;
   transition: all ease-in-out 350ms;
   margin: 0 5px;
   text-align: center;
-  min-width: auto;
-  width: 25%;
   box-sizing: border-box;
-  font-variation-settings: 'wght' 1;
+  padding: 5px 30px;
+  flex: 1 auto;
+  font-weight: 400;
+  font-variation-settings: 'wdth' 50;
 }
 
 .menu-button:hover {
-  width: 50%;
-  font-variation-settings: 'wght' 999;
+  font-variation-settings: 'wdth' 150;
 }
